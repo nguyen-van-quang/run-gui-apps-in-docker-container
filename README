@@ -1,0 +1,10 @@
+Run Docker Application
+
+1. $ brew install scocat
+2. $ brew install xquartx
+3. $ open -a Xquartz
+4. Enable mode “allow connections from network clients on Xquartz” of Xquartz in Preferences/Security
+5. In Terminal of Xquartz run command: $ socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\”$DISPLAY\”
+6. Get ip of host: $ ifconfig en0
+7. Run command in any terminal: $ docker run -e DISPLAY=192.168.1.5:0 -ti --entrypoint /bin/sh ubuntu-desktop:0.1
+8. Run any application ex: $ firefox gimp
